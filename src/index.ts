@@ -1,9 +1,2 @@
-import { ExampleComponent, constant, someFn } from './exampleComponent'
-
-export {
-  ExampleComponent,
-  constant,
-  someFn
-}
-
-export * from './customSystem'
+import { extras, createExtra, triggerExtraEmote, triggerExtraStop, moveExtra, rotateExtra, EXTRA_BODY_TYPE } from "./extras";
+export {extras, createExtra, triggerExtraEmote, triggerExtraStop, moveExtra, rotateExtra, EXTRA_BODY_TYPE}
