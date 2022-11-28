@@ -33,6 +33,7 @@ To use any of the helpers provided by this library:
 ## Usage
 
 //list of all extras created
+
 EXTRAS.extras
 
 let ex = EXTRAS.createExtra({position: new Vector3(8,0,8)}, EXTRAS.EXTRA_BODY_TYPE.MALE, "Bob")
