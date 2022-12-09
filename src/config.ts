@@ -19,7 +19,6 @@ export let extraFemaleTop:any[] =[
     "urn:decentraland:off-chain:base-avatars:light_green_shirt",
     "urn:decentraland:off-chain:base-avatars:school_shirt",
     "urn:decentraland:off-chain:base-avatars:f_blue_jacket",
-    "urn:decentraland:matic:collections-v2:0xb8326d69371668bb8403463e4f71c10b408535c3:1"
 ]
 
 export let extraMaleShoes:any[] =[
@@ -51,7 +50,6 @@ export let extraMaleTop:any[] =[
     "urn:decentraland:off-chain:base-avatars:elegant_sweater",
     "urn:decentraland:off-chain:base-avatars:pride_tshirt",
     "urn:decentraland:off-chain:base-avatars:elegant_sweater",
-    "urn:decentraland:matic:collections-v2:0xb8326d69371668bb8403463e4f71c10b408535c3:1"
 ]
 
 export let extraskin:any[]= [
