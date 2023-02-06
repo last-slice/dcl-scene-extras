@@ -41,6 +41,8 @@ let ex = EXTRAS.createExtra({position: new Vector3(8,0,8)}, EXTRAS.EXTRA_BODY_TY
 
 ex.moveExtra(new Vector3(8,0,8), new Vector3(4,0,15), 2, ()=>{})
 
+ex.changeWearables(['"urn:decentraland:off-chain:base-avatars:f_stripe_white_pants"'])
+
 ex.rotateExtra(Quaternion.Euler(0,0,0), Quaternion.Euler(0,90,0), 2, ()=>{})
 
 ex.triggerEmote('wave')
