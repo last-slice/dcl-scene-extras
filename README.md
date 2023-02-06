@@ -32,20 +32,21 @@ To use any of the helpers provided by this library:
 
 ## Usage
 
+```typescript
 //list of all extras created
 
 EXTRAS.extras
 
 let ex = EXTRAS.createExtra({position: new Vector3(8,0,8)}, EXTRAS.EXTRA_BODY_TYPE.MALE, "Bob")
 
-EXTRAS.moveExtra(ex, new Vector3(8,0,8), new Vector3(4,0,15), 2, ()=>{})
+ex.moveExtra(new Vector3(8,0,8), new Vector3(4,0,15), 2, ()=>{})
 
-EXTRAS.rotateExtra(ex, Quaternion.Euler(0,0,0), Quaternion.Euler(0,90,0), 2, ()=>{})
+ex.rotateExtra(Quaternion.Euler(0,0,0), Quaternion.Euler(0,90,0), 2, ()=>{})
 
-EXTRAS.triggerExtraEmote([ex], ['wave'])
+ex.triggerEmote('wave')
 
-EXTRAS.triggerExtraStop([ex])
-
+ex.stopEmote()
+```
 ...
 
 ## Copyright info
