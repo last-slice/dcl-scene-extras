@@ -1,2 +1,2 @@
-import { extras, createExtra, triggerExtraEmote, triggerExtraStop, moveExtra, rotateExtra, EXTRA_BODY_TYPE } from "./extras";
-export {extras, createExtra, triggerExtraEmote, triggerExtraStop, moveExtra, rotateExtra, EXTRA_BODY_TYPE}
+import { extras, createExtra, EXTRA_BODY_TYPE } from "./extras";
+export {extras, createExtra,  EXTRA_BODY_TYPE}
