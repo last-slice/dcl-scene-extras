@@ -24,7 +24,7 @@ export class Extra extends Entity{
 
     avatarShape:AvatarShape
 
-    constructor(transform:TranformConstructorArgs, body:EXTRA_BODY_TYPE, name:string, wearables?:string[], skinColor?:Color4, hairColor?: Color4, eyeColor?:Color4, hairstyle?:string){
+    constructor(transform:TranformConstructorArgs, body:EXTRA_BODY_TYPE, name:string, wearables?:string[], emotes?:any[], skinColor?:Color4, hairColor?: Color4, eyeColor?:Color4, hairstyle?:string){
         super("extra-" + name)
         this.addComponent(new Transform(transform))
 
@@ -57,6 +57,13 @@ export class Extra extends Entity{
             }
             else{
                 body == EXTRA_BODY_TYPE.FEMALE ? this.avatarShape.wearables.push(CONFIG.extraFemaleHairstyle[getRandomIntInclusive(0, CONFIG.extraFemaleHairstyle.length -1)]) : this.avatarShape.wearables.push(CONFIG.extraMaleHairstyle[getRandomIntInclusive(0, CONFIG.extraMaleHairstyle.length -1)]) 
+            }
+
+            if(emotes){
+                this.avatarShape.emotes = []
+                for(let i = 0; i < (emotes.length < 10? emotes.length : 10); i++){
+                    this.avatarShape.emotes.push({urn: emotes[i].urn, slot:i})
+                }
             }
 
         this.addComponent(this.avatarShape)
@@ -122,7 +129,8 @@ export class Extra extends Entity{
      *
      */
     stopEmote(){
-            this.avatarShape.expressionTriggerTimestamp = Math.round(+new Date() / 1000)
+            this.getComponent(Transform).position.z += .01
+            this.getComponent(Transform).position.z -= .01
     }
 }
 
@@ -141,12 +149,12 @@ export class Extra extends Entity{
  * @returns The extra created
  * @public
  */
-export function createExtra(transform:TranformConstructorArgs, body:EXTRA_BODY_TYPE, name:string, wearables?:string[], skinColor?:Color4, hairColor?: Color4, eyeColor?:Color4, hairstyle?:string){
+export function createExtra(transform:TranformConstructorArgs, body:EXTRA_BODY_TYPE, name:string, wearables?:string[], emotes?:any[], skinColor?:Color4, hairColor?: Color4, eyeColor?:Color4, hairstyle?:string){
     let parent = new Entity()
     parent.addComponent(new Transform())
     engine.addEntity(parent)
 
-    let extra = new Extra(transform, body, name, wearables, skinColor, hairColor, eyeColor, hairstyle)
+    let extra = new Extra(transform, body, name, wearables, emotes, skinColor, hairColor, eyeColor, hairstyle)
     engine.addEntity(extra)
     extras.push(extra)
     return extra
