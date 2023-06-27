@@ -150,9 +150,9 @@ export class Extra extends Entity{
  * @public
  */
 export function createExtra(transform:TranformConstructorArgs, body:EXTRA_BODY_TYPE, name:string, wearables?:string[], emotes?:any[], skinColor?:Color4, hairColor?: Color4, eyeColor?:Color4, hairstyle?:string){
-    let parent = new Entity()
-    parent.addComponent(new Transform())
-    engine.addEntity(parent)
+    // let parent = new Entity()
+    // parent.addComponent(new Transform())
+    // engine.addEntity(parent)
 
     let extra = new Extra(transform, body, name, wearables, emotes, skinColor, hairColor, eyeColor, hairstyle)
     engine.addEntity(extra)
