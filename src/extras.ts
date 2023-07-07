@@ -43,7 +43,7 @@ export class Extra extends Entity{
     
             if(wearables){
                 wearables.forEach((wearable)=>{
-                    this.avatarShape.wearables.push(wearable)
+                    this.avatarShape.wearables.push("urn:decentraland:matic:collections-v2:" + wearable)
                 })
             }
             else{
@@ -62,7 +62,7 @@ export class Extra extends Entity{
             if(emotes){
                 this.avatarShape.emotes = []
                 for(let i = 0; i < (emotes.length < 10? emotes.length : 10); i++){
-                    this.avatarShape.emotes.push({urn: emotes[i].urn, slot:i})
+                    this.avatarShape.emotes.push({urn: "urn:decentraland:matic:collections-v2:"+emotes[i], slot:i})
                 }
             }
 
